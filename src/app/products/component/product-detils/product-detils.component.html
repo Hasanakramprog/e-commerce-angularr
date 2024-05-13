@@ -1,0 +1,33 @@
+<section class="mt-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center">
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery "></ngx-gallery>
+      </div>
+      <div class="col-md-6">
+        <h2 class="">{{data.title}}</h2>
+        <h4> ${{data.price }}</h4>
+        <ngb-rating [rate]="data.rating"></ngb-rating> <small class="text-secondary fw-bold">
+          {{data.rating}}</small>
+        <p class=" fw-bold">brand : {{data.brand}}</p>
+        <hr>
+        <p class=" fw-bold fs-4 text-primary">Description :</p>
+        <p class=" text-muted">{{data.description}}</p>
+        <ul class="icon-ul list-unstyled d-flex justify-content-between w-75">
+          <li>
+            <img src="assets/imges/one.png" alt="icon">
+            <p class="fw-bold mt-1">Easy Returns </p>
+          </li>
+          <li>
+            <img src="assets/imges/tow.png" alt="icon">
+            <p class="fw-bold mt-1">Easy Returns </p>
+          </li>
+          <li>
+            <img src="assets/imges/three.png" alt="icon">
+            <p class="fw-bold mt-1">Easy Returns </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
