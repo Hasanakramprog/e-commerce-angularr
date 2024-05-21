@@ -1,6 +1,9 @@
 import { ToastrService } from 'ngx-toastr';
 import { CartsService } from './../../carts.service';
 import { Component, OnInit } from '@angular/core';
+import * as jsPDF from 'jspdf';
+import { MatDialog } from '@angular/material/dialog';
+import { AppOrderDialogComponent } from './../../app-order-dialog/app-order-dialog.component';
 
 @Component({
   selector: 'app-cart',
@@ -10,7 +13,8 @@ import { Component, OnInit } from '@angular/core';
 export class CartComponent implements OnInit {
   productsCart: any = []
   total: number = 0
-  constructor(private CartsService: CartsService, private ToastrService: ToastrService) { }
+  pdfSrc: string | undefined;
+  constructor(private CartsService: CartsService, private ToastrService: ToastrService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getCartProduct()
@@ -61,23 +65,76 @@ export class CartComponent implements OnInit {
   }
 
   orderCart() {
-    let model
+    const dialogRef = this.dialog.open(AppOrderDialogComponent, {
+      // Optional configuration for the dialog
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+           let model
+    let products:any [] = []
     for (let x in this.productsCart) {
 
-      let products = {
+      let product = {
         title: this.productsCart[x].item.title,
         quantity: this.productsCart[x].quantity,
-        price: this.productsCart[x].item.price
+        price: this.productsCart[x].item.price,
+        name:result.name,
+        number:result.number,
+        location:result.location,
 
       }
+      products.push(product)
+
       model = products
       // console.log(model)
     }
+
+
+    this.clearCart()
+
+    if (products.length==0){
+      this.ToastrService.warning("add to cart first please")
+    }
+    else{
     this.CartsService.orderNow(model).subscribe(res => {
       // console.log(res)
       this.ToastrService.success("Well done your order is sucsessfully Send")
     })
+  }
+        // Handle submitted data (name and number) from the dialog
+        console.log('Order details:', result);
+      }
+    });
 
+  //   let model
+  //   let products:any [] = []
+  //   for (let x in this.productsCart) {
+
+  //     let product = {
+  //       title: this.productsCart[x].item.title,
+  //       quantity: this.productsCart[x].quantity,
+  //       price: this.productsCart[x].item.price
+
+  //     }
+  //     products.push(product)
+
+  //     model = products
+  //     // console.log(model)
+  //   }
+
+
+  //   this.clearCart()
+
+  //   if (products.length==0){
+  //     this.ToastrService.warning("add to cart first please")
+  //   }
+  //   else{
+  //   this.CartsService.orderNow(model).subscribe(res => {
+  //     // console.log(res)
+  //     this.ToastrService.success("Well done your order is sucsessfully Send")
+  //   })
+  // }
   }
 
   calculateDiscountPrice(price: number, discountPercent: number) {

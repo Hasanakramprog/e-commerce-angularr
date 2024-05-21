@@ -1,5 +1,5 @@
 <div class="container mt-3">
-    <h3 class=" small mb-4 ">yuo have <span class="text-primary">{{productsCart.length}}</span> product in yuor cart</h3>
+    <h3 class=" small mb-4 ">yuo have <span class="text-primary">{{productsCart.length}}</span> product in your cart</h3>
     <div (click)="clearCart()" class=" text-end pb-1">
 
         <span class=" text-danger">  <i class="fa-solid fa-calendar-xmark"></i> clear shoping cart</span>
@@ -65,9 +65,21 @@
 
 
         </div>
-         <div class="w-25 ms-auto py-2 mb-2 bg-danger  text-white  text-center">
-         <a  (click)="orderCart()" class=" text-white" >    order now</a>
+         <div class="w-25 ms-auto py-2 mb-2   text-white  text-center ">
+          <div class="text-center">
+            <img  src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="width: 50px;">
+           </div>
+
+          <a (click)="orderCart()" class="btn btn-success">
+            Order on WhatsApp
+          </a>
+
 
         </div>
+        <!-- <div>
+          <a (click)="orderCart()" class="btn btn-success">
+            <i class="bi bi-whatsapp"></i> Order on WhatsApp
+          </a>
+        </div> -->
 
 </div>

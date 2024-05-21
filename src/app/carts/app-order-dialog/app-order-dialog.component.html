@@ -1,0 +1,62 @@
+<!-- <h1 mat-dialog-title>Place Your Order</h1>
+<mat-dialog-content>
+  <form>
+    <mat-form-field>
+      <p>name</p>
+      <input matInput placeholder="Name" [(ngModel)]="name" name="name">
+    </mat-form-field>
+    <mat-form-field>
+      <p>number</p>
+      <input matInput placeholder="Phone Number" [(ngModel)]="number" name="number" type="tel">
+    </mat-form-field>
+    <mat-form-field>
+      <p>Location</p>
+      <input matInput placeholder="Location" [(ngModel)]="location" name="Location" type="number">
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onClose()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()">Place Order</button>
+</mat-dialog-actions> -->
+
+<h1 mat-dialog-title>Place Your Order</h1>
+<mat-dialog-content>
+<form [formGroup]="userForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Enter Name" formControlName="name" type="text" [(ngModel)]="name">
+    <mat-error *ngIf="userForm.get('name')?.hasError('required')">
+      Name is required.
+    </mat-error>
+
+
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Phone Number</mat-label>
+    <input matInput placeholder="Enter phone number" formControlName="number" type="tel" [(ngModel)]="number">
+    <mat-error *ngIf="userForm.get('number')?.hasError('required')">
+      Phone number is required.
+    </mat-error>
+    <mat-error *ngIf="userForm.get('number')?.hasError('invalidNumber')">
+      Invalid phone number format.
+    </mat-error>
+
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>location</mat-label>
+    <input matInput placeholder="Enter location" formControlName="location" type="text" [(ngModel)]="location">
+    <mat-error *ngIf="userForm.get('location')?.hasError('required')">
+      location is required.
+    </mat-error>
+
+
+  </mat-form-field>
+  <!-- <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">Submit</button> -->
+</form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onClose()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="userForm.invalid">Place Order</button>
+</mat-dialog-actions>
+

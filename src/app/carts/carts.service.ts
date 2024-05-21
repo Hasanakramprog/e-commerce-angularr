@@ -6,8 +6,11 @@ import { Injectable } from '@angular/core';
 export class CartsService {
 
   constructor(private http:HttpClient) { }
-  orderNow(model:any){
-    return this.http.post("https://dummyjson.com/products/add",model)
+  orderNow(data:any){
+
+      // return this.http.get("https://dummyjson.com/products/"+id)
+      return this.http.post("http://127.0.0.1:8000/api/products/order/",data)
+
   }
 }
 

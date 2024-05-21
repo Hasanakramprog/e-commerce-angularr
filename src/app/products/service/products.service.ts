@@ -34,4 +34,9 @@ export class ProductsService {
     // return this.http.get("https://dummyjson.com/products/"+id)
     return this.http.get("http://127.0.0.1:8000/api/products/"+id)
   }
+
+  OrderProductById( data:any){
+    // return this.http.get("https://dummyjson.com/products/"+id)
+    return this.http.post("http://127.0.0.1:8000/api/products/order/",data)
+  }
 }
