@@ -1,9 +1,9 @@
 import { ProductsService } from './../../service/products.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import {NgxGalleryOptions} from '@kolkov/ngx-gallery';
-import {NgxGalleryImage} from '@kolkov/ngx-gallery';
-import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
+// import {NgxGalleryOptions} from '@kolkov/ngx-gallery';
+// import {NgxGalleryImage} from '@kolkov/ngx-gallery';
+// import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
 import { NgbRatingConfig, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 
 ActivatedRoute
@@ -22,18 +22,18 @@ export class ProductDetilsComponent implements OnInit {
 
   data: any =[];
   galleryOptions: any =[];
-  galleryImages: any=[] 
+  galleryImages: any=[]
 
   ngOnInit(): void {
     this.GetProductDetils()
     console.log(this.data.images[0])
- 
+
   }
   GetProductDetils(){
    this.ProductsService.GetProductById(this.id).subscribe(res =>{
    this.data=res
    console.log(this.data.images[0])
-   
+
    this.galleryOptions = [
     {
       width: '450px',
@@ -83,7 +83,7 @@ export class ProductDetilsComponent implements OnInit {
       medium: `${this.data.images[3]}`,
       big: `${this.data.images[3]}`
     }
-   
+
   ];
    })
   }

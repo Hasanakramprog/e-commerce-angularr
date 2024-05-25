@@ -1,7 +1,6 @@
 import { ToastrService } from 'ngx-toastr';
 import { CartsService } from './../../carts.service';
 import { Component, OnInit } from '@angular/core';
-import * as jsPDF from 'jspdf';
 import { MatDialog } from '@angular/material/dialog';
 import { AppOrderDialogComponent } from './../../app-order-dialog/app-order-dialog.component';
 

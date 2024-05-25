@@ -11,7 +11,9 @@ import { ProductComponent } from './component/product/product.component';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { NgxGalleryModule } from '@hyahfoufi/ngx-gallery';
+// import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+// import { NgxPhotoSwiperModule } from 'ngx-photo-swiper';
 @NgModule({
   declarations: [
     AllProductsComponent,
