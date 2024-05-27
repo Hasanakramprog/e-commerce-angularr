@@ -5,8 +5,8 @@ i{
  img{
     width: 70px;
     height: 70px;
- } 
-  
+ }
+
 input[type="number"]{
     outline: none !important;
     box-shadow:none !important;
@@ -18,5 +18,15 @@ input[type="number"]{
     .show--class{
         display: block !important;
     }
-   
+
   }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+

@@ -24,6 +24,7 @@ import {
 import {MatButtonModule} from '@angular/material/button';
 // import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
 // import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
@@ -33,7 +34,7 @@ import {MatInputModule} from '@angular/material/input';
 
   ],
   imports: [
-    CommonModule,RouterModule,FormsModule,MatDialogModule,MatFormFieldModule,MatInputModule,MatButtonModule,MatDialogTitle,MatDialogContent,MatDialogActions,MatDialogClose,ReactiveFormsModule,FontAwesomeModule
+    CommonModule,RouterModule,FormsModule,MatDialogModule,MatFormFieldModule,MatInputModule,MatIconModule,MatButtonModule,MatDialogTitle,MatDialogContent,MatDialogActions,MatDialogClose,ReactiveFormsModule,FontAwesomeModule
   ]
   ,
   exports:[CartComponent,]

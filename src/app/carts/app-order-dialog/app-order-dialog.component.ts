@@ -25,7 +25,7 @@ export class AppOrderDialogComponent   {
 
   phoneNumberValidator(control: FormControl) {
     // Replace with your desired phone number format regular expression
-    const phoneRegExp = /^\d{10}$/; // Example for 10-digit US numbers
+    const phoneRegExp = /^\+?961(?:(3|70|71)\d{6})|(03|70|71)\d{6}$/; // Example for 10-digit US numbers
     if (!control.value || phoneRegExp.test(control.value)) {
       return null; // Valid
     }
