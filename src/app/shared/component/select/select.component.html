@@ -2,7 +2,7 @@
   <select (change)="dettectChange($event)" class="form-select" id="floatingSelect"
       aria-label="Floating label select example">
       <option selected>All Products</option>
-      <option *ngFor="let item of data">{{item}}</option>
+      <option *ngFor="let item of data">{{item.name}}</option>
 
   </select>
   <label for="floatingSelect">Categories :</label>
