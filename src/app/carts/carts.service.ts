@@ -8,8 +8,8 @@ export class CartsService {
   constructor(private http:HttpClient) { }
   orderNow(data:any){
 
-      return this.http.get("https://dummyjson.com/products/"+data)
-      // return this.http.post("http://127.0.0.1:8000/api/products/order/",data)
+      // return this.http.get("https://dummyjson.com/products/"+data)
+      return this.http.post("https://hasanalaa.pythonanywhere.com/api/products/order/",data)
 
   }
 }
