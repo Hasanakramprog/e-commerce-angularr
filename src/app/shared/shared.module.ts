@@ -5,6 +5,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { SpinnerComponent } from './component/spinner/spinner.component';
 import { SelectComponent } from './component/select/select.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { ScrollToTopComponent } from './component/scroll-to-top/scroll-to-top.component';
 
 
 
@@ -13,7 +14,8 @@ import { FooterComponent } from './component/footer/footer.component';
     HeaderComponent,
     SpinnerComponent,
     SelectComponent,
-    FooterComponent
+    FooterComponent,
+    ScrollToTopComponent,
   ],
   imports: [
     CommonModule,
