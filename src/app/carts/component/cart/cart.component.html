@@ -37,7 +37,7 @@
 
 
            </div></td>
-           <td><h6>${{calculateDiscountPrice(item.item.price,item.item.discountPercentage) * item.quantity}}</h6></td>
+           <td><h6>${{calculateSubtotalt(item.item.price,item.item.discountPercentage,item.quantity)}}</h6></td>
            <td> <div (click)="removeItem(index)" class=" text-end  text-danger ">
             <i  class="fa-regular fa-trash-can">   Remove  </i>
           </div></td>
@@ -47,7 +47,7 @@
   </div>
   <hr>
     <div class="w-25 ms-auto mt-4 py-2    text-center">
-       <p class=" fw-bold m-0"> total :  $ {{total}} </p>
+       <p class=" fw-bold m-0"> total :  $ {{total.toFixed(2)}} </p>
 
 
         </div>

@@ -31,7 +31,9 @@
         <a *ngIf="show" (click)="add()"  (click)="show= false" class=" btn btn-primary px-3 me-2 " >Add </a>
 
         <button type="button" class="btn btn-secondary me-2 " placement="top" ngbTooltip="product detils">
-            <i class="fa-solid fa-eye text-white"  [routerLink]="['/details', data.id]" ></i>
+            <i class="fa-solid fa-eye text-white"  *ngIf="(data.discountPercentage==0)" [routerLink]="['/details', data.id,data.price]" ></i>
+            <i class="fa-solid fa-eye text-white"  *ngIf="(data.discountPercentage>0)" [routerLink]="['/details', data.id,calculateDiscountPrice(data.price, data.discountPercentage)]" ></i>
+            <!-- <i class="fa-solid fa-eye text-white"  *ngIf="(data.discountPercentage>0)" [routerLink]="['/details', data.id,2]" ></i> -->
         </button>
     </div>
     <div class="dicount position-absolute ">

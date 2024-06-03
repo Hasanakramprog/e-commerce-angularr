@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 // import {NgxGalleryImage} from '@kolkov/ngx-gallery';
 // import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
 import { NgbRatingConfig, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 
 ActivatedRoute
 @Component({
@@ -13,9 +14,14 @@ ActivatedRoute
   styleUrls: ['./product-detils.component.scss']
 })
 export class ProductDetilsComponent implements OnInit {
+  show: boolean=false
+  amount: number = 1
+  productsCart: any[] = [];
   id:any
-  constructor( private route:ActivatedRoute,private ProductsService:ProductsService,config: NgbRatingConfig) {
+  discoutPrice:any
+  constructor( private route:ActivatedRoute,private ProductsService:ProductsService,config: NgbRatingConfig,private ToastrService: ToastrService) {
   this.id =  this.route.snapshot.paramMap.get("id");
+  this.discoutPrice =  this.route.snapshot.paramMap.get("price");
   config.max = 5;
   config.readonly = true;
   }
@@ -33,6 +39,7 @@ export class ProductDetilsComponent implements OnInit {
    this.ProductsService.GetProductById(this.id).subscribe(res =>{
    this.data=res
    console.log(this.data.images[0])
+   console.log(this.discoutPrice)
 
    this.galleryOptions = [
     {
@@ -87,4 +94,32 @@ export class ProductDetilsComponent implements OnInit {
   ];
    })
   }
+
+  addToCart(product: any) {
+    console.log()
+
+    if ("cart" in localStorage) {
+      this.productsCart = JSON.parse(localStorage.getItem("cart")!)
+      let exit = this.productsCart.find(item => item.item.id == product.item.id)
+      if (exit) {
+        this.ToastrService.warning('', ' product already on cart !', {
+          positionClass: 'fixed-top',
+
+        });
+      } else {
+
+        this.ToastrService.success('', 'product added in cart successfully', {
+          positionClass: 'fixed-top',
+        });
+
+        this.productsCart.push(product)
+        localStorage.setItem("cart", JSON.stringify(this.productsCart))
+      }
+
+    } else {
+      this.productsCart.push(product)
+      localStorage.setItem("cart", JSON.stringify(this.productsCart))
+    }
+  }
+
 }

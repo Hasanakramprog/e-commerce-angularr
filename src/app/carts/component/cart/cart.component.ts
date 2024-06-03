@@ -139,7 +139,26 @@ export class CartComponent implements OnInit {
   calculateDiscountPrice(price: number, discountPercent: number) {
     if (discountPercent > 0) {
       const discountAmount = price * (discountPercent / 100);
-      return price - discountAmount;
+      let discountPrice= price - discountAmount;
+      let discountPriceString=discountPrice.toFixed(2);
+      discountPrice=+discountPriceString;
+
+      return discountPrice;
+    } else {
+      return price; // No discount applied
+    }
+  }
+  calculateSubtotalt(price: number, discountPercent: number,itemNumber:number) {
+    if (discountPercent > 0) {
+      const discountAmount = price * (discountPercent / 100);
+      let discountPrice= price - discountAmount;
+      let discountPriceString=discountPrice.toFixed(2);
+      discountPrice=+discountPriceString;
+      let discountsub = discountPrice * itemNumber;
+      let discountSubPriceString= discountsub.toFixed(2);
+      let discountSubPrice=+discountSubPriceString
+
+      return discountSubPrice;
     } else {
       return price; // No discount applied
     }
