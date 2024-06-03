@@ -20,7 +20,7 @@
         </p>
 
         <div class="star">
-            <ngb-rating [rate]="data.rating"></ngb-rating> <small class="text-secondary fw-bold">
+            <ngb-rating (rate)="data.rating" [readonly]="show" (rateChange)="onRateChange($event)"></ngb-rating> <small class="text-secondary fw-bold">
                 {{data.rating}}</small>
         </div>
     </div>
