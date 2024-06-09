@@ -3,7 +3,12 @@ import { CartsService } from './../../carts.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AppOrderDialogComponent } from './../../app-order-dialog/app-order-dialog.component';
-
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+async function waitOneSecond() {
+  console.log("Going to sleep for 1 second...");
+  await sleep(1000); // wait for 1000 milliseconds (1 second)
+  console.log("Woke up after 1 second!");
+}
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -13,6 +18,7 @@ export class CartComponent implements OnInit {
   productsCart: any = []
   total: number = 0
   pdfSrc: string | undefined;
+  loding: boolean = false
   constructor(private CartsService: CartsService, private ToastrService: ToastrService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -63,12 +69,14 @@ export class CartComponent implements OnInit {
     this.getCartTotal()
   }
 
+
   orderCart() {
     const dialogRef = this.dialog.open(AppOrderDialogComponent, {
       // Optional configuration for the dialog
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      this.loding = true
       if (result) {
            let model
     let products:any [] = []
@@ -98,7 +106,9 @@ export class CartComponent implements OnInit {
     else{
     this.CartsService.orderNow(model).subscribe(res => {
       // console.log(res)
-      this.ToastrService.success("Well done your order is sucsessfully Send")
+      waitOneSecond()
+      this.loding = false;
+      this.ToastrService.success("Well done your order is sucsessfully Send");
     })
   }
         // Handle submitted data (name and number) from the dialog

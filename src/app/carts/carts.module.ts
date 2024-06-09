@@ -10,7 +10,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-
+import { SharedModule } from '../shared/shared.module';
 import {  ReactiveFormsModule } from '@angular/forms';
 import {
   MatDialog,
@@ -34,7 +34,7 @@ import {MatIconModule} from '@angular/material/icon';
 
   ],
   imports: [
-    CommonModule,RouterModule,FormsModule,MatDialogModule,MatFormFieldModule,MatInputModule,MatIconModule,MatButtonModule,MatDialogTitle,MatDialogContent,MatDialogActions,MatDialogClose,ReactiveFormsModule,FontAwesomeModule
+    CommonModule,RouterModule,SharedModule,FormsModule,MatDialogModule,MatFormFieldModule,MatInputModule,MatIconModule,MatButtonModule,MatDialogTitle,MatDialogContent,MatDialogActions,MatDialogClose,ReactiveFormsModule,FontAwesomeModule
   ]
   ,
   exports:[CartComponent,]
