@@ -1,0 +1,12 @@
+<div class="price-filter-container">
+  <p>Price Range:</p>
+  <mat-slider min="minPrice" max="maxPrice" step="priceStep" [(ngModel)]="filterRange.min" thumbLabel>
+    <input matSliderStartThumb>
+  </mat-slider>
+  <span class="price-separator">-</span>
+  <mat-slider min="minPrice" max="maxPrice" step="priceStep" [(ngModel)]="filterRange.max" thumbLabel>
+    <input matSliderEndThumb>
+  </mat-slider>
+  <p>Under {{ filterRange.min }}</p>
+  <p>Over {{ filterRange.max }}</p>
+</div>

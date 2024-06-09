@@ -1,0 +1,13 @@
+.price-filter-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.price-filter-container p {
+  margin: 0 1rem;
+}
+
+.price-separator {
+  font-weight: bold;
+}

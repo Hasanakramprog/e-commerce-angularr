@@ -2,7 +2,7 @@ import { ProductsService } from './../../service/products.service';
 import { Component, OnInit, Pipe, } from '@angular/core';
 import { NgbRatingConfig, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
-
+import { Options, LabelType } from "@angular-slider/ngx-slider";
 @Component({
   selector: 'app-all-products',
   templateUrl: './all-products.component.html',
@@ -29,6 +29,22 @@ export class AllProductsComponent implements OnInit {
   Categories: any[] = [];
   loding: boolean = true
   error: boolean = false
+  minValue: number = 100;
+  maxValue: number = 400;
+  options: Options = {
+    floor: 0,
+    ceil: 500,
+    translate: (value: number, label: LabelType): string => {
+      switch (label) {
+        case LabelType.Low:
+          return "<b>Min price:</b> $" + value;
+        case LabelType.High:
+          return "<b>Max price:</b> $" + value;
+        default:
+          return "$" + value;
+      }
+    }
+  };
   ngOnInit(): void {
     this.getProducts()
     this.getCategories()
@@ -36,7 +52,17 @@ export class AllProductsComponent implements OnInit {
 
 
   }
+  filterPrice(event: any){
+    let lowvalue = event.value
+    let highvalue = event.highValue
+    this.loding = true
+    this.service.getProudactsByPrice(lowvalue,highvalue).subscribe((res: any) => {
+      console.log(res)
+      this.products = res.products
+      this.loding = false
 
+  });
+}
 
 
   getProducts() {

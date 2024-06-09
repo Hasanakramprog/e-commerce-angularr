@@ -20,6 +20,9 @@
                 <app-select [data]="Categories" (selectdData)="filterCategories($event)"></app-select>
 
             </div>
+            <div class="col-md-3 ms-auto mt-2">
+              <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (userChangeEnd)="filterPrice($event)"></ngx-slider>
+            </div>
 
             <div class="col-md-3 ms-auto mt-2">
 

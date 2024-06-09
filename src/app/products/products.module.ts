@@ -12,6 +12,7 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxGalleryModule } from '@hyahfoufi/ngx-gallery';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 // import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 // import { NgxPhotoSwiperModule } from 'ngx-photo-swiper';
 @NgModule({
@@ -26,6 +27,8 @@ import { NgxGalleryModule } from '@hyahfoufi/ngx-gallery';
     NgbRatingModule,
     SharedModule,
     NgbTooltipModule,
+    NgxSliderModule,
+
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 2000, // 15 seconds

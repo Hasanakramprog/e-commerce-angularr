@@ -14,6 +14,9 @@ export class ProductsService {
   getAllProudacts( ){
     return this.http.get("https://dummyjson.com/products?limit=28")
   }
+  getProudactsByPrice(low:any,high:any ){
+    return this.http.get("https://hasanalaa.pythonanywhere.com/api/productsByrange/"+low+"/"+high+"/")
+  }
   getAllCategories( ){
     return this.http.get("https://dummyjson.com/products/categories")
   }
