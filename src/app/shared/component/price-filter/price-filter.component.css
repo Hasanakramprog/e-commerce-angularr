@@ -1,16 +1,4 @@
-button {
-  position: fixed;
-  top: 5px;
-  right: 10px;
-  border: none;
-  background-color: #21c452;
-  padding: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-}
+
 
 button:hover {
   opacity: 1;
@@ -33,7 +21,7 @@ button:hover {
   align-items: center;   /* Center icon and text vertically */
   cursor: pointer;
   position: fixed;
-  top: 5px;
+  top: 488px;
   right: 10px;
   border: none;
   padding: 5px;

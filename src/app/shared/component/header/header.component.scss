@@ -209,8 +209,8 @@ header {
 
 .link {
     font-weight: 700;
-    font-size: 15px;
-    color: #000000;
+    font-size: 19px;
+    color: #a50f9e;
 
     span {
         display: inline-block;
@@ -222,7 +222,7 @@ header {
             // margin: 0 auto;
             width: 0;
             height: 2px;
-            background-color: black;
+            background-color: rgb(9, 29, 211);
             -webkit-transition: opacity .3s ease, width .3s ease;
             -moz-transition: opacity .3s ease, width .3s ease;
             -o-transition: opacity .3s ease, width .3s ease;
