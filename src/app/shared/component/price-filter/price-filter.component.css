@@ -1,13 +1,50 @@
-.price-filter-container {
+button {
+  position: fixed;
+  top: 5px;
+  right: 10px;
+  border: none;
+  background-color: #21c452;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+button:hover {
+  opacity: 1;
+}
+.whatsapp-button-container {
   display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
+  justify-content: center; /* Center the button horizontally */
+  align-items: center;   /* Center the button vertically */
+  margin: 10px;         /* Add some margin for spacing */
 }
 
-.price-filter-container p {
-  margin: 0 1rem;
+.circle-button {
+  width: 50px;            /* Adjust button size as needed */
+  height: 50px;
+  border-radius: 80%;     /* Make the button a circle */
+  background-color: #25D366;  /* WhatsApp green color */
+  color: white;          /* Text color */
+  display: flex;          /* Allow horizontal alignment of icon and text */
+  justify-content: center; /* Center icon and text horizontally */
+  align-items: center;   /* Center icon and text vertically */
+  cursor: pointer;
+  position: fixed;
+  top: 5px;
+  right: 10px;
+  border: none;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease;      /* Indicate hover and click behavior */
 }
 
-.price-separator {
-  font-weight: bold;
+.circle-button i {
+  margin-right: 5px;      /* Add margin between icon and text */
+}
+
+.circle-button .button-text {
+  font-size: 14px;        /* Adjust text size as needed */
 }
