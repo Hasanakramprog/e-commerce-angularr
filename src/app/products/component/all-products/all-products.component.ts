@@ -26,7 +26,7 @@ export class AllProductsComponent implements OnInit {
   checkErorr: any[] = [];
   productsCart: any[] = [];
   products: any[] = [];
-  Categories: any[] = [];
+  Categories: any[] = ['smartphones', 'laptop', 'screen'];
   loding: boolean = true
   error: boolean = false
   minValue: number = 100;
@@ -68,7 +68,7 @@ export class AllProductsComponent implements OnInit {
   getProducts() {
     this.loding = true
     this.service.getAllProudacts().subscribe((res: any) => {
-      console.log(res)
+      // console.log(res)
       this.products = res.products
       this.loding = false
 

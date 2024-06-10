@@ -18,7 +18,7 @@
       </div>
       <div class="ms-auto cart--icon  position-relativ">
           <i [routerLink]="['/cart']" routerLinkActive="router-link-active"  class="fa-solid text-muted  fs-4 fa-cart-plus   "></i>
-          <!-- <span class="badge  position-absolute  rounded-circle">2</span> -->
+          <span *ngIf="productsCartNum" class="badge  position-absolute  rounded-circle">{{productsCartNum}}</span>
 
       </div>
       <label class="ChangeTheme" for="ChangeTheme">
