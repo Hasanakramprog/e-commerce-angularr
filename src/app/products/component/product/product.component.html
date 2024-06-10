@@ -20,8 +20,16 @@
         </p>
 
         <div class="star">
-            <ngb-rating (rate)="data.rating" [readonly]="show" (rateChange)="onRateChange($event)"></ngb-rating> <small class="text-secondary fw-bold">
+            <ngb-rating [(rate)]="data.rating" [readonly]="show" (rateChange)="onRateChange($event)"></ngb-rating> <small class="text-secondary fw-bold">
                 {{data.rating}}</small>
+                <ngb-toast *ngIf="showToast" (hidden)="showToast = false">
+                  <span style="color: green;">Thanks for rating!  </span>
+                  <button (click)="showToast = false">
+                    <i class="fa-solid fa-arrow-up" style="color: green;"></i>
+
+                  </button>
+
+                </ngb-toast>
         </div>
     </div>
     <div class="add text-center mt-3 d-flex justify-content-center">

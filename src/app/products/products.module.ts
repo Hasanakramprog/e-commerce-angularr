@@ -15,6 +15,7 @@ import { NgxGalleryModule } from '@hyahfoufi/ngx-gallery';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 // import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 // import { NgxPhotoSwiperModule } from 'ngx-photo-swiper';
+import { NgbToast} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AllProductsComponent,
@@ -28,7 +29,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     SharedModule,
     NgbTooltipModule,
     NgxSliderModule,
-
+    NgbToast,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 2000, // 15 seconds

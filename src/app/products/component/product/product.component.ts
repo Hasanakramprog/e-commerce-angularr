@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
+import { NgbToast} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -12,12 +12,14 @@ export class ProductComponent implements OnInit {
   constructor() { }
   show: boolean=false
   amount: number = 1
+  showToast = false; // Initially hide toast
   ngOnInit(): void {
   }
 
   onRateChange(index:any){
     console.log(index)
     console.log(this.data.id)
+    this.showToast = true;
 
   }
   // get single proudct information

@@ -9,8 +9,8 @@ export class HeaderComponent implements OnInit {
   slideIndex = 0;
 
   slides: string[] = [
-    'STUDENT NOW GET 10% OFF!',
-    'new Discount ' // Corrected discount percentage
+    'GET 10% OFF!',
+    'NEW Discount!! ' // Corrected discount percentage
   ];
   constructor() {
     interval(20000) // Adjust interval as needed (in milliseconds)

@@ -4,12 +4,20 @@
 .all--products {
     background-color: #f8f8f8;
     padding: 4rem 0;
+      /* Replace with your image path */
+    background-repeat: no-repeat;  /* Optional: Control image repetition */
+    background-size: cover;       /* Optional: Control image size */
+    background-position: center;  /* Optional: Position image within section */
 
-    h2 {
+    h4 {
         font-size: 40px;
         font-weight: 700;
+        font-family: Arial, sans-serif;
+        color: rgb(255, 255, 255);
     }
 }
+
+
 
 // input serch products
 .input-elevated{
