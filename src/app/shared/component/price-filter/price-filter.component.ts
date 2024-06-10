@@ -10,10 +10,10 @@ export class PriceFilterComponent {
   constructor(private router: Router) { }
 
 startChat() {
-  const whatsappLink = 'whatsapp://send?phone=wa.link/tusc00'; // Replace with your actual link if needed
+  const whatsappLink = 'https://api.whatsapp.com/send?phone=96170639378'; // Replace with your actual link if needed
   // const whatsappLink = 'www.google.com'; // Replace with your actual link if needed
   //   this.router.navigateByUrl(whatsappLink);
-  // window.open('wa.link/tusc00', '_blank');
+  // window.open(whatsappLink, '_blank');
 
 }
 }

@@ -1,16 +1,16 @@
 <div class="cart--item border py-3 pt-0 rounded-4  position-relative">
-    <div class="img--cart " [routerLink]="['/detils', data.id]">
+    <div class="img--cart "  [routerLink]="['/details', data.id,data.price]">
         <img [src]="data.thumbnail" class="w-100 rounded-4 " alt="" srcset="">
     </div>
-    <div class="cart-content text-center pt-2" [routerLink]="['/detils', data.id]">
+    <div class="cart-content text-center pt-2" [routerLink]="['/details', data.id,data.price]">
 
         <p class="m-0 product--title fw-bold"> {{data.title | slice:0:30}}</p>
         <p class=" text-muted text-break">{{data.description | slice:0:55 }}...</p>
         <p class=" fw-bold m-0">
           <del *ngIf="data.discountPrice > data.price">{{ data.price }}</del>
           <span  *ngIf="data.discountPercentage > 0">
-            <del class="old-price">{{ data.price }}<i class="fa-light fa-dollar-sign"></i></del>
-            <p class="discounted-price">{{ calculateDiscountPrice(data.price, data.discountPercentage) }} <i class="fa-light fa-dollar-sign"></i></p>
+            <span class="old-price">WAS: </span><del class="old-price">{{ data.price }}<i class="fa-light fa-dollar-sign"></i></del>
+            <p class="discounted-price">NOW : {{ calculateDiscountPrice(data.price, data.discountPercentage) }} <i class="fa-light fa-dollar-sign"></i></p>
 
           </span>
           <span class="discounted-price" *ngIf="(data.discountPercentage==0)">
