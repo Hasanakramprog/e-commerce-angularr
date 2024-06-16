@@ -2,7 +2,8 @@
     <div class="img--cart "  [routerLink]="['/details', data.id,data.price]">
         <img [src]="data.thumbnail" class="w-100 rounded-4 " alt="" srcset="">
     </div>
-    <div class="cart-content text-center pt-2" [routerLink]="['/details', data.id,data.price]">
+    <div class="cart-content text-center pt-2" >
+    <div  [routerLink]="['/details', data.id,data.price]">
 
         <p class="m-0 product--title fw-bold"> {{data.title | slice:0:30}}</p>
         <p class=" text-muted text-break">{{data.description | slice:0:55 }}...</p>
@@ -18,7 +19,7 @@
           </span>
 
         </p>
-
+        </div>
         <div class="star">
             <ngb-rating [(rate)]="data.rating" [readonly]="show" (rateChange)="onRateChange($event)"></ngb-rating> <small class="text-secondary fw-bold">
                 {{data.rating}}</small>
